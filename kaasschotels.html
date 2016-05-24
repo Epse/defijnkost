@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="nl">
+
 <head>
-<!-- Google API key: AIzaSyC0ey6OU3I1dMsWIaQT_ITEzu9KtgLRjE8 -->
+  <!-- Google API key: AIzaSyC0ey6OU3I1dMsWIaQT_ITEzu9KtgLRjE8 -->
   <meta charset="utf-8" />
   <link rel="icon" type="image/png" href="assets/paper_img/favicon.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -12,8 +13,8 @@
   <meta name="viewport" content="width=device-width" />
 
   <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
-  <link href="assets/css/ct-paper.css" rel="stylesheet"/>
-  <link href="assets/css/demo.css" rel="stylesheet" /> 
+  <link href="assets/css/ct-paper.css" rel="stylesheet" />
+  <link href="assets/css/demo.css" rel="stylesheet" />
   <link href="assets/css/defijnkost.css" rel="stylesheet">
   <link href="assets/css/bootstrap-clockpicker.min.css" rel="stylesheet">
 
@@ -21,774 +22,1535 @@
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-      
+
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-71703017-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
 </head>
+
 <body>
-<nav class="navbar navbar-ct" role="navigation-demo" id="demo-navbar">
-  <div class="container" id="top">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="btn btn-simple" href="index.html">De Fijnkost</a>
-    </div>
-
-<!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navigation-example-2">
-      <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="index.html#top" class="btn btn-white btn-fill">Home</a>
-          </li>
-          <li>
-            <a href="index.html#contact" class="btn btn-white btn-fill">Contact</a>
-          </li>
-       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-->
-</nav>         
-
-
-<div class="wrapper">
-   <div class="main">
-    <form action="processKaasschotel.php" method="post" id="form1">
-    <div class="section section-gray fullsize">
-      <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h2>Stap één</h2>
+  <nav class="navbar navbar-inverse" id="demo-navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand pull-left" href="index.html"><span class="glyphicon glyphicon-home" style="padding-right: 0px;"></span></a>
+        <div class="dropdown pull-left">
+          <a class="dropdown-toggle btn btn-fill" data-toggle="dropdown" href="#">Bestel&nbsp;<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="kaasschotels.html">Kaasschotel</a>
+            </li>
+            <li>
+              <a href="broodjes.html#bestel">Broodjes</a>
+            </li>
+          </ul>
         </div>
+        <button type="button" class="btn btn-fill navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+          <span class="sr-only">Toggle navigation</span> Menu&nbsp;<span class="caret"></span>
+        </button>
       </div>
-       <div  class="row">
-         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <p>
-            Stel zelf uw kaasschotel samen en duid aan welke kazen uw voorkeur genieten.
-          </p>
-         </div>
-         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-           <a href="#staptwee" class="btn btn-fill btn-primary">Volgende</a>
-         </div>
-        </div>
-          <fieldset>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                  <table class="table table-striped table-hover table-condensed">
-                    <tr>
-                      <td>Belegen Gouda</td>
-                      <td><input type="checkbox" name="belegen_gouda"></td>
-                    </tr>
-                    <tr>
-                      <td>Oude Gouda</td>
-                      <td><input type="checkbox" name="oude_gouda"></td>
-                    </tr>
-                    <tr>
-                      <td>Jonge Gouda</td>
-                      <td><input type="checkbox" name="jonge_gouda"></td>
-                    </tr>
-                    <tr>
-                      <td>Leerdammer</td>
-                      <td><input type="checkbox" name="leerdammer"></td>
-                    </tr>
-                    <tr>
-                      <td>Milner Jong-belegen</td>
-                      <td><input type="checkbox" name="milner"></td>
-                    </tr>
-                    <tr>
-                      <td>Oudendijk Light-belegen</td>
-                      <td><input type="checkbox" name="oudendijk"></td>
-                    </tr>
-                    <tr>
-                      <td>Vlaskaas</td>
-                      <td><input type="checkbox" name="vlaskaas"></td>
-                    </tr>
-                    <tr>
-                      <td>Gruyere des Alpes</td>
-                      <td><input type="checkbox" name="gruyere_alpes"></td>
-                    </tr>
-                    <tr>
-                      <td>Suisse Emmenthal</td>
-                      <td><input type="checkbox" name="emmenthal"></td>
-                    </tr>
-                    <tr>
-                      <td>Parmesan It.</td>
-                      <td><input type="checkbox" name="parmesan"></td>
-                    </tr>
-                    <tr>
-                      <td>Polder Blancs</td>
-                      <td><input type="checkbox" name="polder_blancs"></td>
-                    </tr>
-                    <tr>
-                      <td>Affligem</td>
-                      <td><input type="checkbox" name="affligem"></td>
-                    </tr>
-                    <tr>
-                      <td>Abdijkaas Postel</td>
-                      <td><input type="checkbox" name="postel"></td>
-                    </tr>
-                    <tr>
-                      <td>Appenzeller</td>
-                      <td><input type="checkbox" name="appenzeller"></td>
-                    </tr>
-                    <tr>
-                      <td>Berloumi</td>
-                      <td><input type="checkbox" name="berloumi"></td>
-                    </tr>
-                    <tr>
-                      <td>Bleu d'Auvergne</td>
-                      <td><input type="checkbox" name="bleu_auvergne"></td>
-                    </tr>
-                    <tr>
-                      <td>Bleu Danois</td>
-                      <td><input type="checkbox" name="bleu_danois"></td>
-                    </tr>
-                    <tr>
-                      <td>Bon St. Mathias</td>
-                      <td><input type="checkbox" name="stmathias"></td>
-                    </tr>
-                    <tr>
-                      <td>Brandnetelkaas</td>
-                      <td><input type="checkbox" name="brandnetel"></td>
-                    </tr>
-                    <tr>
-                      <td>Brie neutraal Frans</td>
-                      <td><input type="checkbox" name="brie_neutraal"></td>
-                    </tr>
-                    <tr>
-                      <td>Brie de Meaux</td>
-                      <td><input type="checkbox" name="brie_meaux"></td>
-                    </tr>
-                    <tr>
-                      <td>Brie met kruiden</td>
-                      <td><input type="checkbox" name="brie_kruiden"></td>
-                    </tr>
-                    <tr>
-                      <td>Brie met pesto</td>
-                      <td><input type="checkbox" name="brie_pesto"></td>
-                    </tr>
-                    <tr>
-                      <td>Brie met peper</td>
-                      <td><input type="checkbox" name="brie_peper"></td>
-                    </tr>
-                    <tr>
-                      <td>Brie met truffel</td>
-                      <td><input type="checkbox" name="brie_truffel"></td>
-                    </tr>
-                    <tr>
-                      <td>Brillat met truffel</td>
-                      <td><input type="checkbox" name="brillat_truffel"></td>
-                    </tr>
-                    <tr>
-                      <td>Brugsche Blomme</td>
-                      <td><input type="checkbox" name="brugsche_blomme"></td>
-                    </tr>
-                    <tr>
-                      <td>Brussel</td>
-                      <td><input type="checkbox" name="brussel"></td>
-                    </tr>
-                    <tr>
-                      <td>Buche Geitenkaas</td>
-                      <td><input type="checkbox" name="buche_geit"></td>
-                    </tr>
-                    <tr>
-                      <td>Cados</td>
-                      <td><input type="checkbox" name="cados"></td>
-                    </tr>
-                    <tr>
-                      <td>Cailladou</td>
-                      <td><input type="checkbox" name="cailladou"></td>
-                    </tr>
-                    <tr>
-                      <td>Cambozola</td>
-                      <td><input type="checkbox" name="cambozola"></td>
-                    </tr>
-                    <tr>
-                      <td>Camembert Rustique</td>
-                      <td><input type="checkbox" name="camembert_rustique"></td>
-                    </tr>
-                    <tr>
-                      <td>Cantenaar</td>
-                      <td><input type="checkbox" name="cantenaar"></td>
-                    </tr>
-                    <tr>
-                      <td>Castelbelbo</td>
-                      <td><input type="checkbox" name="castelbelbo"></td>
-                    </tr>
-                    <tr>
-                      <td>Castello Black</td>
-                      <td><input type="checkbox" name="castello_black"></td>
-                    </tr>
-                    <tr>
-                      <td>Castello Bleu</td>
-                      <td><input type="checkbox" name="castello_bleu"></td>
-                    </tr>
-                    <tr>
-                      <td>Castello Mini</td>
-                      <td><input type="checkbox" name="castello_mini"></td>
-                    </tr>
-                    <tr>
-                      <td>Chabis Raisins</td>
-                      <td><input type="checkbox" name="chabis_raisins"></td>
-                    </tr>
-                    <tr>
-                      <td>Chamois d'Or</td>
-                      <td><input type="checkbox" name="chamois_or"></td>
-                    </tr>
-                    <tr>
-                      <td>Chaumes</td>
-                      <td><input type="checkbox" name="chaumes"></td>
-                    </tr>
-                    <tr>
-                      <td>Chester</td>
-                      <td><input type="checkbox" name="chester"></td>
-                    </tr>
-                    <tr>
-                      <td>Chimay Bier</td>
-                      <td><input type="checkbox" name="chimay_bier"></td>
-                    </tr>
-                    <tr>
-                      <td>Comt&eacute;</td>
-                      <td><input type="checkbox" name="comte"></td>
-                    </tr>
-                    <tr>
-                      <td>Delice de Bourgogne</td>
-                      <td><input type="checkbox" name="delice_bourgogne"></td>
-                    </tr>
-                    <tr>
-                      <td>Echte Loo</td>
-                      <td><input type="checkbox" name="echte_loo"></td>
-                    </tr>
-                    <tr>
-                      <td>Epoisses</td>
-                      <td><input type="checkbox" name="epoisses"></td>
-                    </tr>
-                    <tr>
-                      <td>Explorateur</td>
-                      <td><input type="checkbox" name="explorateur"></td>
-                    </tr>
-                    <tr>
-                      <td>Fol Epi</td>
-                      <td><input type="checkbox" name="fol_epi"></td>
-                    </tr>
-                    <tr>
-                      <td>Fourme d'Ambert</td>
-                      <td><input type="checkbox" name="fourme_ambert"></td>
-                    </tr>
-                    <tr>
-                      <td>Frais d'Ozo</td>
-                      <td><input type="checkbox" name="frais_ozo"></td>
-                    </tr>
-                    <tr>
-                      <td>Fromage de Troyes</td>
-                      <td><input type="checkbox" name="troyes"></td>
-                    </tr>
-                    <tr>
-                      <td>Geitenkaas Petales des Roses</td>
-                      <td><input type="checkbox" name="petales_roses"></td>
-                    </tr>
-                    <tr>
-                      <td>Geitenkaas met pijpajuin</td>
-                      <td><input type="checkbox" name="geit_pijpajuin"></td>
-                    </tr>
-                    <tr>
-                      <td>Geitenkaas met spek</td>
-                      <td><input type="checkbox" name="geit_spek"></td>
-                    </tr>
-                    <tr>
-                      <td>Gorgonzola</td>
-                      <td><input type="checkbox" name="gorgonzola"></td>
-                    </tr>
-                    <tr>
-                      <td>Gourmelin</td>
-                      <td><input type="checkbox" name="gourmelin"></td>
-                    </tr>
-                    <tr>
-                      <td>Gr&uuml;nl&auml;nder</td>
-                      <td><input type="checkbox" name="grunlander"></td>
-                    </tr>
-                    <tr>
-                      <td>Hommelkaas</td>
-                      <td><input type="checkbox" name="hommelkaas"></td>
-                    </tr>
-                    <tr>
-                      <td>Landana geitenkaas met kruiden</td>
-                      <td><input type="checkbox" name="landana_geit_kruiden"></td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                  <table class="table table-striped table-hover table-condensed">
-                    <tr>
-                      <td>Langres</td>
-                      <td><input type="checkbox" name="langres"></td>
-                    </tr>
-                    <tr>
-                      <td>La Tur</td>
-                      <td><input type="checkbox" name="la_tur"></td>
-                    </tr>
-                    <tr>
-                      <td>Maredsous</td>
-                      <td><input type="checkbox" name="maredsous"></td>
-                    </tr>
-                    <tr>
-                      <td>Marquis</td>
-                      <td><input type="checkbox" name="marquis"></td>
-                    </tr>
-                    <tr>
-                      <td>Manchego Semicurado</td>
-                      <td><input type="checkbox" name="manchego_semicurado"></td>
-                    </tr>
-                    <tr>
-                      <td>Merzer</td>
-                      <td><input type="checkbox" name="merzer"></td>
-                    </tr>
-                    <tr>
-                      <td>Mosterdkaas</td>
-                      <td><input type="checkbox" name="mosterdkaas"></td>
-                    </tr>
-                    <tr>
-                      <td>Mozzarella bolletjes</td>
-                      <td><input type="checkbox" name="mozzarella_bolletjes"></td>
-                    </tr>
-                    <tr>
-                      <td>Munster</td>
-                      <td><input type="checkbox" name="munster"></td>
-                    </tr>
-                    <tr>
-                      <td>Nazareth</td>
-                      <td><input type="checkbox" name="nazareth"></td>
-                    </tr>
-                    <tr>
-                      <td>Oostenrijkse kruiden</td>
-                      <td><input type="checkbox" name="oostenrijk_kruiden"></td>
-                    </tr>
-                    <tr>
-                      <td>Oostenrijkse bloemen</td>
-                      <td><input type="checkbox" name="oostenrijk_bloemen"></td>
-                    </tr>
-                    <tr>
-                      <td>Orval</td>
-                      <td><input type="checkbox" name="orval"></td>
-                    </tr>
-                    <tr>
-                      <td>Oud Brugge</td>
-                      <td><input type="checkbox" name="oud_brugge"></td>
-                    </tr>
-                    <tr>
-                      <td>Oude Brokkel</td>
-                      <td><input type="checkbox" name="oude_brokkel"></td>
-                    </tr>
-                    <tr>
-                      <td>Pain d'Ange</td>
-                      <td><input type="checkbox" name="pain_ange"></td>
-                    </tr>
-                    <tr>
-                      <td>Paschka aardbei</td>
-                      <td><input type="checkbox" name="paschka_aardbei"></td>
-                    </tr>
-                    <tr>
-                      <td>Paschka ananas</td>
-                      <td><input type="checkbox" name="paschka_ananas"></td>
-                    </tr>
-                    <tr>
-                      <td>Paschka Banaan</td>
-                      <td><input type="checkbox" name="paschka_banaan"></td>
-                    </tr>
-                    <tr>
-                      <td>Paschka Chocolade</td>
-                      <td><input type="checkbox" name="paschka_chocolade"></td>
-                    </tr>
-                    <tr>
-                      <td>Passendale Classic</td>
-                      <td><input type="checkbox" name="passendale_classic"></td>
-                    </tr>
-                    <tr>
-                      <td>Perail de Brebis</td>
-                      <td><input type="checkbox" name="perail_brebis"></td>
-                    </tr>
-                    <tr>
-                      <td>P&egrave;re Joseph</td>
-                      <td><input type="checkbox" name="pere_joseph"></td>
-                    </tr>
-                    <tr>
-                      <td>Petrella</td>
-                      <td><input type="checkbox" name="stbernardus"></td>
-                    </tr>
-                    <tr>
-                      <td>Peyrigoux</td>
-                      <td><input type="checkbox" name="peyrigoux"></td>
-                    </tr>
-                    <tr>
-                      <td>Port Salut</td>
-                      <td><input type="checkbox" name="port_salut"></td>
-                    </tr>
-                    <tr>
-                      <td>Pont l'Eveque</td>
-                      <td><input type="checkbox" name="pont_eveque"></td>
-                    </tr>
-                    <tr>
-                      <td>Platte kaas 40%</td>
-                      <td><input type="checkbox" name="platte_kaas_40"></td>
-                    </tr>
-                    <tr>
-                      <td>Platte kaas met aardbei</td>
-                      <td><input type="checkbox" name="platte_kaas_aardbei"></td>
-                    </tr>
-                    <tr>
-                      <td>Rambol met kruiden</td>
-                      <td><input type="checkbox" name="rambol_kruiden"></td>
-                    </tr>
-                    <tr>
-                      <td>Rambol met noten</td>
-                      <td><input type="checkbox" name="rambol_noten"></td>
-                    </tr>
-                    <tr>
-                      <td>Reblochon</td>
-                      <td><input type="checkbox" name="reblochon"></td>
-                    </tr>
-                    <tr>
-                      <td>Rochebaron</td>
-                      <td><input type="checkbox" name="rochebaron"></td>
-                    </tr>
-                    <tr>
-                      <td>Roquefort Soci&eacute;t&eacute;</td>
-                      <td><input type="checkbox" name="roquefort"></td>
-                    </tr>
-                    <tr>
-                      <td>Roule FH</td>
-                      <td><input type="checkbox" name="roule"></td>
-                    </tr>
-                    <tr>
-                      <td>Rubens</td>
-                      <td><input type="checkbox" name="rubens"></td>
-                    </tr>
-                    <tr>
-                      <td>Samsoe</td>
-                      <td><input type="checkbox" name="samsoe"></td>
-                    </tr>
-                    <tr>
-                      <td>Schropshire</td>
-                      <td><input type="checkbox" name="schropshire"></td>
-                    </tr>
-                    <tr>
-                      <td>St. Agur</td>
-                      <td><input type="checkbox" name="petrella"></td>
-                    </tr>
-                    <tr>
-                      <td>St. Bernardus</td>
-                      <td><input type="checkbox" name="stbernardus"></td>
-                    </tr>
-                    <tr>
-                      <td>Stilton Hoog</td>
-                      <td><input type="checkbox" name="stilton_hoog"></td>
-                    </tr>
-                    <tr>
-                      <td>St. Nectaire</td>
-                      <td><input type="checkbox" name="stnectaire"></td>
-                    </tr>
-                    <tr>
-                      <td>St. Maarten</td>
-                      <td><input type="checkbox" name="stmaarten"></td>
-                    </tr>
-                    <tr>
-                      <td>St. Maure</td>
-                      <td><input type="checkbox" name="stmaure"></td>
-                    </tr>
-                    <tr>
-                      <td>St. Romans</td>
-                      <td><input type="checkbox" name="stromans"></td>
-                    </tr>
-                    <tr>
-                      <td>Talegio</td>
-                      <td><input type="checkbox" name="talegio"></td>
-                    </tr>
-                    <tr>
-                      <td>Tartufo</td>
-                      <td><input type="checkbox" name="tartufo"></td>
-                    </tr>
-                    <tr>
-                      <td>T&ecirc;te des Moines</td>
-                      <td><input type="checkbox" name="tete_moines"></td>
-                    </tr>
-                    <tr>
-                      <td>Tilsit</td>
-                      <td><input type="checkbox" name="tilsit"></td>
-                    </tr>
-                    <tr>
-                      <td>Tomme de Savoie</td>
-                      <td><input type="checkbox" name="tomme_savoie"></td>
-                    </tr>
-                    <tr>
-                      <td>Trou du Cru</td>
-                      <td><input type="checkbox" name="trou_du_cru"></td>
-                    </tr>
-                    <tr>
-                      <td>Vacherin</td>
-                      <td><input type="checkbox" name="vacherin"></td>
-                    </tr>
-                    <tr>
-                      <td>Vieux Pan&eacute;</td>
-                      <td><input type="checkbox" name="vieuw_pane"></td>
-                    </tr>
-                    <tr>
-                      <td>Watou Special</td>
-                      <td><input type="checkbox" name="watou_special"></td>
-                    </tr>
-                    <tr>
-                      <td>Wijnendale</td>
-                      <td><input type="checkbox" name="wijnendale"></td>
-                    </tr>
-                    <tr>
-                      <td>Westlite belegen</td>
-                      <td><input type="checkbox" name="westlite_belegen"></td>
-                    </tr>
-                    <tr>
-                      <td>Westlite Jong</td>
-                      <td><input type="checkbox" name="westlite_jong"></td>
-                    </tr>
-                    <tr>
-                      <td>Westlite Toscane</td>
-                      <td><input type="checkbox" name="westlite_toscane"></td>
-                    </tr>
-                    <tr>
-                      <td>Zalmkaas</td>
-                      <td><input type="checkbox" name="zalmkaas"></td>
-                    </tr>
-                    <tr>
-                      <td>Zwitserse Raclette</td>
-                      <td><input type="checkbox" name="raclette_zwitsers"></td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+
+      <div class="collapse navbar-collapse" id="navigation-example-2">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="vleeswaren.html" class="btn btn-white btn-simple">Fijne Vleeswaren</a>
+          </li>
+          <li>
+            <a href="gerechten.html" class="btn btn-white btn-simple">Bereide Gerechten</a>
+          </li>
+          <li>
+            <a href="salades.html" class="btn btn-white btn-simple">Eigen salades</a>
+          </li>
+          <li>
+            <a href="kaas.html" class="btn btn-white btn-simple">Kazen &amp; Kaasschotels</a>
+          </li>
+          <li>
+            <a href="broodjes.html" class="btn btn-white btn-simple">Belegde Broodjes</a>
+          </li>
+          <li>
+            <a href="index.html#contact" class="btn btn-fill">Contact</a>
+          </li>
+          <li>
+            <a href="nieuws.php" class="btn btn-fill">Nieuws</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid-->
+  </nav>
+
+
+  <div class="wrapper">
+    <div class="main">
+      <form action="processKaasschotel.php" method="post" id="form1">
+        <div class="section section-amber fullsize">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h2>Stap één</h2>
               </div>
             </div>
-          </fieldset>
-      </div>
-    </div>
-    <div class="section section-light-brown" id="staptwee">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h2>Stap twee</h2>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <p>
+                  Stel zelf uw kaasschotel samen en duid aan welke kazen uw voorkeur genieten. Kaasschotels kosten &euro;12,50 per persoon.
+                  Stokbrood, dadel-, noten- of rozijnenbrood en dadelbrood verkrijgbaar op aanvraag. <a href="index.html#contact">Contacteer ons.</a>
+                </p>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <a href="#staptwee" class="btn btn-danger">Volgende</a>
+              </div>
+            </div>
+            <fieldset>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <table class="table table-striped-amber table-hover-amber table-condensed">
+                      <tr>
+                        <td>Affligem</td>
+                        <td>&euro;17,90 / kg</td>
+                        <td>
+                          <input name="affligem" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Almkase Oostenrijks lactosevrij</td>
+                        <td>&euro;26,90 / kg</td>
+                        <td>
+                          <input name="almkase_oostenrijks_lactosevrij" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Antons Rooie Liefje</td>
+                        <td>&euro;34,90 / kg</td>
+                        <td>
+                          <input name="antons_rooie_liefje" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Appenzeller</td>
+                        <td>&euro;29,95 / kg</td>
+                        <td>
+                          <input name="appenzeller" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Babykaasje cello 250 gr</td>
+                        <td>&euro;7,95 / st.</td>
+                        <td>
+                          <input name="babykaasje_cello_250_gr" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Babykaasje goud 250 gr</td>
+                        <td>&euro;7,95 / st.</td>
+                        <td>
+                          <input name="babykaasje_goud_250_gr" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Belegen Gouda</td>
+                        <td>&euro;16,95 / kg</td>
+                        <td>
+                          <input name="belegen_gouda" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Berloumi (grill)</td>
+                        <td>&euro;6,75 / st.</td>
+                        <td>
+                          <input name="berloumi_(grill)" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Bleu d' Auvergne</td>
+                        <td>&euro;14,90 / kg</td>
+                        <td>
+                          <input name="bleu_d'_auvergne" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Bleu Danois</td>
+                        <td>&euro;17,95 / kg</td>
+                        <td>
+                          <input name="bleu_danois" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Bon St Mathias</td>
+                        <td>&euro;22,00 / kg</td>
+                        <td>
+                          <input name="bon_st_mathias" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Bourguibleu</td>
+                        <td>&euro;6,20 / st.</td>
+                        <td>
+                          <input name="bourguibleu" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brandnetel</td>
+                        <td>&euro;16,90 / kg</td>
+                        <td>
+                          <input name="brandnetel" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brebidux Schapekaas</td>
+                        <td>&euro;30,95 / kg</td>
+                        <td>
+                          <input name="brebidux_schapekaas" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brie de Meaux</td>
+                        <td>&euro;19,95 / kg</td>
+                        <td>
+                          <input name="brie_de_meaux" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brie kruiden</td>
+                        <td>&euro;21,95 / kg</td>
+                        <td>
+                          <input name="brie_kruiden" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brie peper</td>
+                        <td>&euro;24,95 / kg</td>
+                        <td>
+                          <input name="brie_peper" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brie pesto</td>
+                        <td>&euro;23,95 / kg</td>
+                        <td>
+                          <input name="brie_pesto" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brie truffel</td>
+                        <td>&euro;44,90 / kg</td>
+                        <td>
+                          <input name="brie_truffel" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brillat truffel</td>
+                        <td>&euro;42,95 / kg</td>
+                        <td>
+                          <input name="brillat_truffel" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brugsche Blomme</td>
+                        <td>&euro;25,95 / kg</td>
+                        <td>
+                          <input name="brugsche_blomme" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brussel</td>
+                        <td>&euro;3,95 / st.</td>
+                        <td>
+                          <input name="brussel" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Buche geitenkaas</td>
+                        <td>&euro;19,95 / kg</td>
+                        <td>
+                          <input name="buche_geitenkaas" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cados</td>
+                        <td>&euro;30,95 / kg</td>
+                        <td>
+                          <input name="cados" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cailladou</td>
+                        <td>&euro;20,90 / kg</td>
+                        <td>
+                          <input name="cailladou" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cambozola</td>
+                        <td>&euro;20,90 / kg</td>
+                        <td>
+                          <input name="cambozola" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Camembert Rustique</td>
+                        <td>&euro;20,95 / kg</td>
+                        <td>
+                          <input name="camembert_rustique" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Carré d'Aurillac</td>
+                        <td>&euro;16,95 / kg</td>
+                        <td>
+                          <input name="carré_d'aurillac" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Castelbelbo </td>
+                        <td>&euro;29,95 / kg</td>
+                        <td>
+                          <input name="castelbelbo_" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Castello Black</td>
+                        <td>&euro;27,90 / kg</td>
+                        <td>
+                          <input name="castello_black" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Castello Bleu</td>
+                        <td>&euro;23,00 / kg</td>
+                        <td>
+                          <input name="castello_bleu" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Castello mini</td>
+                        <td>&euro;3,20 / st.</td>
+                        <td>
+                          <input name="castello_mini" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Chabis Raisins</td>
+                        <td>&euro;3,70 / st.</td>
+                        <td>
+                          <input name="chabis_raisins" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Chamois d'Or</td>
+                        <td>&euro;24,95 / kg</td>
+                        <td>
+                          <input name="chamois_d'or" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Champignon Peper Lactosevrij</td>
+                        <td>&euro;24,90 / kg</td>
+                        <td>
+                          <input name="champignon_peper_lactosevrij" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Chaumes</td>
+                        <td>&euro;24,95 / kg</td>
+                        <td>
+                          <input name="chaumes" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Chester</td>
+                        <td>&euro;18,50 / kg</td>
+                        <td>
+                          <input name="chester" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Chimay bier</td>
+                        <td>&euro;33,90</td>
+                        <td>
+                          <input name="chimay_bier" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Choco Boerinneken</td>
+                        <td>&euro;3,60</td>
+                        <td>
+                          <input name="choco_boerinneken" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Choco light</td>
+                        <td>&euro;3,90</td>
+                        <td>
+                          <input name="choco_light" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Chocomousse</td>
+                        <td></td>
+                        <td>
+                          <input name="chocomousse" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Comte</td>
+                        <td>&euro;18,95 / kg</td>
+                        <td>
+                          <input name="comte" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cremeux de Bourgogne</td>
+                        <td>&euro;25,00 / kg</td>
+                        <td>
+                          <input name="cremeux_de_bourgogne" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Dadelbrood 200 gr</td>
+                        <td>&euro;4,20 / st.</td>
+                        <td>
+                          <input name="dadelbrood_200_gr" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Damse Koe</td>
+                        <td>&euro;24,00 / kg</td>
+                        <td>
+                          <input name="damse_koe" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Damse Schaap</td>
+                        <td>&euro;41,90 / kg</td>
+                        <td>
+                          <input name="damse_schaap" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Delice de Bourgogne</td>
+                        <td>&euro;20,95 / kg</td>
+                        <td>
+                          <input name="delice_de_bourgogne" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Dixmuda boter</td>
+                        <td>&euro;3,00</td>
+                        <td>
+                          <input name="dixmuda_boter" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Echte Loo</td>
+                        <td>&euro;21,95 / kg</td>
+                        <td>
+                          <input name="echte_loo" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Epifine olijven</td>
+                        <td>&euro;35,20 / kg</td>
+                        <td>
+                          <input name="epifine_olijven" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Epoisses</td>
+                        <td>&euro;35,80 / kg</td>
+                        <td>
+                          <input name="epoisses" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Explorateur</td>
+                        <td>&euro;24,90 / kg</td>
+                        <td>
+                          <input name="explorateur" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Fol Epi</td>
+                        <td>&euro;28,95 / kg</td>
+                        <td>
+                          <input name="fol_epi" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Fourme d'Ambert</td>
+                        <td>&euro;16,20 / kg</td>
+                        <td>
+                          <input name="fourme_d'ambert" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Fr. Brie neutraal</td>
+                        <td>&euro;11 / kg</td>
+                        <td>
+                          <input name="fr._brie_neutraal" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Frais d'Ozo</td>
+                        <td>&euro;3,50 / st.</td>
+                        <td>
+                          <input name="frais_d'ozo" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>From. de Troyes</td>
+                        <td>&euro;23,90 / kg</td>
+                        <td>
+                          <input name="from._de_troyes" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Fromage 2 Cap</td>
+                        <td>&euro;25,90 / kg</td>
+                        <td>
+                          <input name="fromage_2_cap" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Geit Petales des Roses</td>
+                        <td>&euro;4,20 / st.</td>
+                        <td>
+                          <input name="geit_petales_des_roses" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Geitekaas met spek</td>
+                        <td>&euro;2,90 / st.</td>
+                        <td>
+                          <input name="geitekaas_met_spek" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Geitekaas pijpajuin</td>
+                        <td>&euro;3,90 / st.</td>
+                        <td>
+                          <input name="geitekaas_pijpajuin" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Geitenkaas Batoens mini</td>
+                        <td>&euro;49,90 / kg</td>
+                        <td>
+                          <input name="geitenkaas_batoens_mini" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Gepaneerde Geitenkaas</td>
+                        <td>&euro;5,95 / 4 st</td>
+                        <td>
+                          <input name="gepaneerde_geitenkaas" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Gorgonzola</td>
+                        <td>&euro;21,90 / kg</td>
+                        <td>
+                          <input name="gorgonzola" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Gourmelin</td>
+                        <td>&euro;30,50 / kg</td>
+                        <td>
+                          <input name="gourmelin" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Grunlander</td>
+                        <td>&euro;13,90 / kg</td>
+                        <td>
+                          <input name="grunlander" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Gruyere des Alpes</td>
+                        <td>&euro;27,95 / kg</td>
+                        <td>
+                          <input name="gruyere_des_alpes" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Harry Cuberdons</td>
+                        <td>&euro;3,80 / kg</td>
+                        <td>
+                          <input name="harry_cuberdons" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Harry Tapaischotel</td>
+                        <td>&euro;7,20 / kg</td>
+                        <td>
+                          <input name="harry_tapaischotel" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Harry Veenbessen</td>
+                        <td>&euro;3,80 / kg</td>
+                        <td>
+                          <input name="harry_veenbessen" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Hommelkaas</td>
+                        <td>&euro;20,95 / kg</td>
+                        <td>
+                          <input name="hommelkaas" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Inza 1 l halfvol</td>
+                        <td>&euro;1,70</td>
+                        <td>
+                          <input name="inza_1_l_halfvol" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Inza 1 l vol</td>
+                        <td>&euro;1,90</td>
+                        <td>
+                          <input name="inza_1_l_vol" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Inza &frac12; l halfvolle</td>
+                        <td>&euro;1,10</td>
+                        <td>
+                          <input name="inza_1/2_l_halfvolle" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Inza &frac12; l vol</td>
+                        <td>&euro;1,10</td>
+                        <td>
+                          <input name="inza_½_l_vol" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Jonge Gouda</td>
+                        <td>&euro;13,95 / kg</td>
+                        <td>
+                          <input name="jonge_gouda" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Kaasrol</td>
+                        <td>&euro;2,70 / st.</td>
+                        <td>
+                          <input name="kaasrol" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Kaassalade</td>
+                        <td></td>
+                        <td>
+                          <input name="kaassalade" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Kaastoastjes zakje</td>
+                        <td>&euro;3,45 / st.</td>
+                        <td>
+                          <input name="kaastoastjes_zakje" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Kaasvlinders zakje</td>
+                        <td>&euro;3,45 / st.</td>
+                        <td>
+                          <input name="kaasvlinders_zakje" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>L'Artisan Caramel</td>
+                        <td>&euro;20,95 / kg</td>
+                        <td>
+                          <input name="l'artisan_caramel" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>La Tur</td>
+                        <td>&euro;26,90 / kg</td>
+                        <td>
+                          <input name="la_tur" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Landana 500 dagen</td>
+                        <td>&euro;20,95 / kg</td>
+                        <td>
+                          <input name="landana_500_dagen" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Landana geit-kruiden</td>
+                        <td>&euro;25,90 / kg</td>
+                        <td>
+                          <input name="landana_geit-kruiden" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Langres</td>
+                        <td>&euro;22,95 / kg</td>
+                        <td>
+                          <input name="langres" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Le Bourrichon</td>
+                        <td>&euro;5,95 / st.</td>
+                        <td>
+                          <input name="le_bourrichon" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Le Petit Bergues</td>
+                        <td>&euro;25,90 / kg</td>
+                        <td>
+                          <input name="le_petit_bergues" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Le petit Doruvael natuur</td>
+                        <td>&euro;17,90 / kg</td>
+                        <td>
+                          <input name="le_petit_doruvael_natuur" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Le petit Doruvael truffel</td>
+                        <td>&euro;24,90 / kg</td>
+                        <td>
+                          <input name="le_petit_doruvael_truffel" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Le Sangle</td>
+                        <td>&euro;6,20 / st.</td>
+                        <td>
+                          <input name="le_sangle" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Leerdammer</td>
+                        <td>&euro;15,95 / kg</td>
+                        <td>
+                          <input name="leerdammer" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Manchego Semicurado</td>
+                        <td>&euro;24,95 / kg</td>
+                        <td>
+                          <input name="manchego__semicurado" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Maredsous</td>
+                        <td>&euro;23,95 / kg</td>
+                        <td>
+                          <input name="maredsous" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Marquis</td>
+                        <td>&euro;21,95 / kg</td>
+                        <td>
+                          <input name="marquis" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Merzer</td>
+                        <td>&euro;24,95 / kg</td>
+                        <td>
+                          <input name="merzer" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Milner jong-belegen</td>
+                        <td>&euro;16,95 / kg</td>
+                        <td>
+                          <input name="milner_jong-belegen" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Mosterdkaas</td>
+                        <td>&euro;16,95 / kg</td>
+                        <td>
+                          <input name="mosterdkaas" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Mozzarella bollekes</td>
+                        <td>&euro;15,90 / kg</td>
+                        <td>
+                          <input name="mozzarella_bollekes" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Munster</td>
+                        <td>&euro;24,95 / kg</td>
+                        <td>
+                          <input name="munster" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Nazareth </td>
+                        <td>&euro;19,00 / kg</td>
+                        <td>
+                          <input name="nazareth_" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Nuit St. Georges</td>
+                        <td>&euro;4,95 / st.</td>
+                        <td>
+                          <input name="nuit_st._georges" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Oostenrijkse bloemen</td>
+                        <td>&euro;27,90 / kg</td>
+                        <td>
+                          <input name="oostenrijkse_bloemen" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Oostenrijkse kruiden</td>
+                        <td>&euro;27,90 / kg</td>
+                        <td>
+                          <input name="oostenrijkse_kruiden" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Orval</td>
+                        <td>&euro;23,90 / kg</td>
+                        <td>
+                          <input name="orval" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ossekop</td>
+                        <td>&euro;5,00 / st.</td>
+                        <td>
+                          <input name="ossekop" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Oud Brugge</td>
+                        <td>&euro;21,95 / kg</td>
+                        <td>
+                          <input name="oud_brugge" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Oude Brokkel</td>
+                        <td>&euro;20,95 / kg</td>
+                        <td>
+                          <input name="oude_brokkel" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Oude Gouda</td>
+                        <td>&euro;17,95 / kg</td>
+                        <td>
+                          <input name="oude_gouda" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Oudendijk light-belegen</td>
+                        <td>&euro;20,95 / kg</td>
+                        <td>
+                          <input name="oudendijk_light-belegen" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Paaltje Blauw-Rood</td>
+                        <td>&euro;34,90 / kg</td>
+                        <td>
+                          <input name="paaltje_blauw-rood" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Pain d'Ange</td>
+                        <td>&euro;33,90 / kg</td>
+                        <td>
+                          <input name="pain_d'ange" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Parmezaanse Cracker 20 gr</td>
+                        <td>&euro;1,75 /st.</td>
+                        <td>
+                          <input name="parmezaanse_cracker_20_gr" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Parmsesan It.</td>
+                        <td>&euro;22,95 / kg</td>
+                        <td>
+                          <input name="parmsesan_it." type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Paschka aarbei</td>
+                        <td>&euro;19,95 / kg</td>
+                        <td>
+                          <input name="paschka_aarbei" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Paschka ananas</td>
+                        <td>&euro;19,95 / kg</td>
+                        <td>
+                          <input name="paschka_ananas" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Paschka banaan</td>
+                        <td>&euro;19,95 / kg</td>
+                        <td>
+                          <input name="paschka_banaan" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Paschka chocola</td>
+                        <td>&euro;19,95 / kg</td>
+                        <td>
+                          <input name="paschka_chocola" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Passendale classic</td>
+                        <td>&euro;21,95 / kg</td>
+                        <td>
+                          <input name="passendale_classic" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Peperkontje</td>
+                        <td>&euro;34,90 / kg</td>
+                        <td>
+                          <input name="peperkontje" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Perail de Brebis</td>
+                        <td>&euro;5,20 / st.</td>
+                        <td>
+                          <input name="perail_de_brebis" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Pere Joseph</td>
+                        <td>&euro;22,95 / kg</td>
+                        <td>
+                          <input name="pere_joseph" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Petrella</td>
+                        <td>&euro;19,90 / kg</td>
+                        <td>
+                          <input name="petrella" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Peyrigoux</td>
+                        <td>&euro;29,90 / kg</td>
+                        <td>
+                          <input name="peyrigoux" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Platte kaas 40%</td>
+                        <td>&euro;8,95 / kg</td>
+                        <td>
+                          <input name="platte_kaas_40%" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Platte kaas vet</td>
+                        <td>&euro;10,50 / kg</td>
+                        <td>
+                          <input name="platte_kaas_vet" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Polder Blancs</td>
+                        <td>&euro;21,95 / kg</td>
+                        <td>
+                          <input name="polder_blancs" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Pont l'Eveque</td>
+                        <td>&euro;28,50 / kg</td>
+                        <td>
+                          <input name="pont_l'eveque" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Port Salut</td>
+                        <td>&euro;21,95 / kg</td>
+                        <td>
+                          <input name="port_salut" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Primavera di Caravaggio</td>
+                        <td>&euro;21,90 / kg</td>
+                        <td>
+                          <input name="primavera_di_caravaggio" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Raclette Zwitsers</td>
+                        <td>&euro;23,90 / kg</td>
+                        <td>
+                          <input name="raclette_zwitsers" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Rambol kruiden</td>
+                        <td>&euro;26,95 / kg</td>
+                        <td>
+                          <input name="rambol_kruiden" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Rambol noten</td>
+                        <td>&euro;24,95 / kg</td>
+                        <td>
+                          <input name="rambol_noten" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Reblochon</td>
+                        <td>&euro;21,90 / kg</td>
+                        <td>
+                          <input name="reblochon" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Rijstpap</td>
+                        <td>&euro;1,00 / st.</td>
+                        <td>
+                          <input name="rijstpap" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Rochebaron</td>
+                        <td>&euro;26,95 / kg</td>
+                        <td>
+                          <input name="rochebaron" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Roquefort Societe</td>
+                        <td>&euro;34,50 / kg</td>
+                        <td>
+                          <input name="roquefort_societe" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Roule ananas</td>
+                        <td>&euro;23,95 / kg</td>
+                        <td>
+                          <input name="roule_ananas" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Roule FH</td>
+                        <td>&euro;23,95 / kg</td>
+                        <td>
+                          <input name="roule_fh" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Roule kruiden</td>
+                        <td>&euro;23,95 / kg</td>
+                        <td>
+                          <input name="roule_kruiden" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Rubens</td>
+                        <td>&euro;21,95 / kg</td>
+                        <td>
+                          <input name="rubens" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Samsoe</td>
+                        <td>&euro;18,95 / kg</td>
+                        <td>
+                          <input name="samsoe" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Schropshire</td>
+                        <td>&euro;35,20 / kg</td>
+                        <td>
+                          <input name="schropshire" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>St Agur</td>
+                        <td>&euro;28,90 / kg</td>
+                        <td>
+                          <input name="st_agur" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>St Bernardus</td>
+                        <td>&euro;18,90 / kg</td>
+                        <td>
+                          <input name="st_bernardus" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>St Maarten</td>
+                        <td>&euro;20,95 / kg</td>
+                        <td>
+                          <input name="st_maarten" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>St Maure</td>
+                        <td>&euro;14,00 / kg</td>
+                        <td>
+                          <input name="st_maure" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>St Nectaire</td>
+                        <td>&euro;17,95 / kg</td>
+                        <td>
+                          <input name="st_nectaire" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>St Romans 180 g</td>
+                        <td>&euro;4,90 / st.</td>
+                        <td>
+                          <input name="st_romans_180_g" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Stilton hoog</td>
+                        <td>&euro;35,95 / kg</td>
+                        <td>
+                          <input name="stilton_hoog" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Stokbrood</td>
+                        <td>&euro;1,20 / st.</td>
+                        <td>
+                          <input name="stokbrood" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Stripey Jack</td>
+                        <td>&euro;31,90</td>
+                        <td>
+                          <input name="stripey_jack" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Suisse Emmenthal</td>
+                        <td>&euro;19,95 / kg</td>
+                        <td>
+                          <input name="suisse_emmenthal" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Talegio</td>
+                        <td>&euro;20,95 / kg</td>
+                        <td>
+                          <input name="talegio" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tartufo</td>
+                        <td>&euro;28,90 / kg</td>
+                        <td>
+                          <input name="tartufo" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tete des Moines</td>
+                        <td>&euro;37,90 / kg</td>
+                        <td>
+                          <input name="tete_des_moines" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tilsit</td>
+                        <td>&euro;17,00 / kg</td>
+                        <td>
+                          <input name="tilsit" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tomme Fermière</td>
+                        <td>&euro;17,90 / kg</td>
+                        <td>
+                          <input name="tomme_fermière" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Trou de Cru</td>
+                        <td>&euro;3,95 / st.</td>
+                        <td>
+                          <input name="trou_de_cru" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Vacherin</td>
+                        <td>&euro;26,95 / kg</td>
+                        <td>
+                          <input name="vacherin" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Verse Geit Cremmentel</td>
+                        <td>&euro;25,00 / kg</td>
+                        <td>
+                          <input name="verse_geit_cremmentel" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Vieux Pané</td>
+                        <td>&euro;28,95 / kg</td>
+                        <td>
+                          <input name="vieux_pané" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Vigneron La Provence</td>
+                        <td>&euro;28,90 / kg</td>
+                        <td>
+                          <input name="vigneron_la_provence" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Vijgenbrood 200 gr</td>
+                        <td>&euro;3,90 / st.</td>
+                        <td>
+                          <input name="vijgenbrood_200_gr" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Vlaaien</td>
+                        <td>&euro;11,95 / kg</td>
+                        <td>
+                          <input name="vlaaien" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Vlaskaas</td>
+                        <td>&euro;20,95 / kg</td>
+                        <td>
+                          <input name="vlaskaas" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Watou special</td>
+                        <td>&euro;18,90 / kg</td>
+                        <td>
+                          <input name="watou_special" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Westlite belegen</td>
+                        <td></td>
+                        <td>
+                          <input name="westlite_belegen" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Westlite jong</td>
+                        <td></td>
+                        <td>
+                          <input name="westlite_jong" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Westlite Toscane</td>
+                        <td>&euro;25,95 / kg</td>
+                        <td>
+                          <input name="westlite_toscane" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Wijnendale</td>
+                        <td>&euro;26,95 / kg</td>
+                        <td>
+                          <input name="wijnendale" type="checkbox">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Zalmkaas</td>
+                        <td>&euro;26,95 / kg</td>
+                        <td>
+                          <input name="zalmkaas" type="checkbox">
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
           </div>
         </div>
-        <div class="row">
-          <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h5>
+        <div class="section section-light-brown" id="staptwee">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h2>Stap twee</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h5>
               Hoe hongerig bent u?
             </h5>
-            <p>
-              Vanaf 6 personen ontvangt u gratis een fles witte wijn, speciaal door ons aanbevolen. Drie mensen met een grote appetijt mag natuurlijk ook.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <div class="form-group">
-            <fieldset>
-              <select class="form-control" id="aantalpersonen" name="aantalpersonen">
-                <option value="4">4 Personen</option>
-                <option value="6">6 Personen</option>
-                <option value="8">8 Personen</option>
-                <option value="10">10 Personen</option>
-                <option value="12">12 Personen</option>
-                <option value="100">Meer...</option>
-              </select>
-            </fieldset>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-few-people">
-          <h5 class="hidden-few-people">Groot feestje!</h5>
-          <p class="hidden-few-people">
-            Hoeveel mensen dan precies?
-          </p>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-few-people">
-          <div class="form-group hidden-few-people">
-            <fieldset>
-              <input type="number" name="aantalveelmensen" class="hidden-few-people">
-            </fieldset>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-    <div class="section section-light-blue" id="stapdrie">
-      <div class="container">
-        <div class="row">
-          <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h2>Stap drie</h2>
-          </div>
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <p>
-              We hebben nog maar enkele gegevens nodig.
-            </p>
-          </div>
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="form-group">
-              <fieldset>
-                <legend class="nolinelegend" for="bestelnaam">Naam en voornaam:</legend>
-                <input type="text" name="bestelnaam" id="bestelnaam" class="form-control" required>
-                <legend for="adres" class="nolinelegend">Adres:</legend>
-                <input type="text" name="adres" id="adres" class="form-control" required>
-                <legend for="email" class="nolinelegend">E-mailadres:</legend>
-                <input type="email" name="email" id="email" class="form-control" required>
-                <legend for="telefoon" class="nolinelegend">Telefoonnumer:</legend>
-                <input type="tel" name="telefoon" id="telefoon" class="form-control" required>
-                <legend for="factuur" class="nolinelegend">Factuur?</legend>
-                <select id="factuur" name="factuur" class="form-control">
-                  <option>Ja</option>
-                  <option selected>Neen</option>
-                </select>
-                <legend for="afhaaldatum" class="nolinelegend">Afhalen op: </legend>
-                <input type="text" name="afhaaldatum" id="afhaaldatum" class="datepicker form-control" required>
-                <legend for="afhaaluur" class="nolinelegend">Afhalen om: </legend>
-                <div class="input-group clockpicker">
-                  <input type="text" class="form-control" value="09:30" id="afhaaluur" name="afhaaluur">
-                  <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-time"></span>
-                  </span>
+                <p>
+                  Vanaf 6 personen ontvangt u gratis een fles witte wijn, speciaal door ons aanbevolen. Drie mensen met een grote appetijt mag natuurlijk ook.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                  <fieldset>
+                    <select class="form-control" id="aantalpersonen" name="aantalpersonen">
+                      <option value="4">4 Personen</option>
+                      <option value="6">6 Personen</option>
+                      <option value="8">8 Personen</option>
+                      <option value="10">10 Personen</option>
+                      <option value="12">12 Personen</option>
+                      <option value="100">Meer...</option>
+                    </select>
+                  </fieldset>
                 </div>
-              </fieldset>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Verzend" class="btn btn-fill btn-lg">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-few-people">
+                <h5 class="hidden-few-people">Groot feestje!</h5>
+                <p class="hidden-few-people">
+                  Hoeveel mensen dan precies?
+                </p>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-few-people">
+                <div class="form-group hidden-few-people">
+                  <fieldset>
+                    <input type="number" name="aantalveelmensen" class="hidden-few-people">
+                  </fieldset>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div class="section section-light-blue" id="stapdrie">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h2>Stap drie</h2>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p>
+                  We hebben nog maar enkele gegevens nodig.
+                </p>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                  <fieldset>
+                    <legend class="nolinelegend" for="bestelnaam">Naam en voornaam:</legend>
+                    <input type="text" name="bestelnaam" id="bestelnaam" class="form-control" required>
+                    <legend for="adres" class="nolinelegend">Adres:</legend>
+                    <input type="text" name="adres" id="adres" class="form-control" required>
+                    <legend for="email" class="nolinelegend">E-mailadres:</legend>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                    <legend for="telefoon" class="nolinelegend">Telefoonnumer:</legend>
+                    <input type="tel" name="telefoon" id="telefoon" class="form-control" required>
+                    <legend for="factuur" class="nolinelegend">Factuur?</legend>
+                    <select id="factuur" name="factuur" class="form-control">
+                      <option>Ja</option>
+                      <option selected>Neen</option>
+                    </select>
+                    <legend for="afhaaldatum" class="nolinelegend">Afhalen op: </legend>
+                    <input type="text" name="afhaaldatum" id="afhaaldatum" class="datepicker form-control" required>
+                    <legend for="afhaaluur" class="nolinelegend">Afhalen om: </legend>
+                    <div class="input-group clockpicker">
+                      <input type="text" class="form-control" value="09:30" id="afhaaluur" name="afhaaluur">
+                      <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                      </span>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Verzenden" class="btn btn-default btn-lg pull-right">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="scroll-top-wrapper-right">
+    <a href="#top" class="scroll-top-inner">
+      <i class="glyphicon glyphicon-chevron-up"></i>
+    </a>
+  </div>
+
+  <div class="modal fade" id="misluktmelding" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Bestelling mislukt</h4>
+        </div>
+        <div class="modal-body">
+          We zijn er niet in geslaagd om uw bestelling te versturen. Gelieve het later opnieuw te proberen.
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-danger btn-simple">OK</button>
+        </div>
       </div>
     </div>
-    </form>
   </div>
-</div>
 
-<!-- Modal -->
- <div class="scroll-top-wrapper-right">
-  <a href="#top" class="scroll-top-inner">
-    <i class="glyphicon glyphicon-chevron-up"></i>
-  </a>
-</div>
-
-<div class="modal fade" id="misluktmelding" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Bestelling mislukt</h4>
-      </div>
-      <div class="modal-body">
-        We zijn er niet in geslaagd om uw bestelling te versturen. Gelieve het later opnieuw te proberen. 
-      </div>
-      <div class="modal-footer">
-        <button type="button" data-dismiss="modal" class="btn btn-danger btn-simple">OK</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--    end modal -->
+  <!--    end modal -->
 </body>
-    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
 
-	<script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
-	
-	<!--  Plugins -->
-	<script src="assets/js/ct-paper-checkbox.js"></script>
-	<script src="assets/js/ct-paper-radio.js"></script>
-	<script src="assets/js/bootstrap-select.js"></script>
-	<script src="assets/js/bootstrap-datepicker.js"></script>
-	<script src="assets/js/bootstrap-clockpicker.min.js"></script>
-	<script src="assets/js/jquery.validate.min.js"></script>
-	<script src="assets/js/additional-methods.min.js"></script>
-	<script src="assets/js/methods_nl.min.js"></script>
-	
-	<script src="assets/js/ct-paper.js"></script>
-	
-	<script type="text/javascript">
-      $('#form1').validate();
-      
-      
-      $('.clockpicker').clockpicker({
-        placement: 'top',
-        donetext: 'Klaar',
-        default: 'now',
-        
-      });
-      
-      $('#aantalpersonen').change(function(){
-        if ($('#aantalpersonen').val() == 100) {
-          $('.hidden-few-people').addClass('show');
-        } else {
-          $('.hidden-few-people').removeClass('show');
-        }
-      });
-      
-      function fullsizer() {
-        $('.fullsize').css('min-height',$(window).height()+'px');
-      }
-      
-      $(document).ready(function() {
-        $('#misluktmelding').modal({ show: false});
-        
-        $('a[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
+<script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
 
-	    var target = this.hash;
-	    var $target = $(target);
+<!--  Plugins -->
+<script src="assets/js/ct-paper-checkbox.js"></script>
+<script src="assets/js/ct-paper-radio.js"></script>
+<script src="assets/js/bootstrap-select.js"></script>
+<script src="assets/js/bootstrap-datepicker.js"></script>
+<script src="assets/js/bootstrap-clockpicker.min.js"></script>
+<script src="assets/js/jquery.validate.min.js"></script>
+<script src="assets/js/additional-methods.min.js"></script>
+<script src="assets/js/methods_nl.min.js"></script>
 
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});
-        	$(document).on( 'scroll', function(){
- 
-		if ($(window).scrollTop() > 100) {
-			$('.scroll-top-wrapper-right').addClass('show');
-		} else {
-			$('.scroll-top-wrapper-right').removeClass('show');
-		}
-	});
-        fullsizer();
-        
-        var QueryString = function () {
-  // This function is anonymous, is executed immediately and 
-  // the return value is assigned to QueryString!
-  var query_string = {};
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i=0;i<vars.length;i++) {
-    var pair = vars[i].split("=");
-        // If first entry with this name
-    if (typeof query_string[pair[0]] === "undefined") {
-      query_string[pair[0]] = decodeURIComponent(pair[1]);
-        // If second entry with this name
-    } else if (typeof query_string[pair[0]] === "string") {
-      var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
-      query_string[pair[0]] = arr;
-        // If third or later entry with this name
+<script src="assets/js/ct-paper.js"></script>
+
+<script type="text/javascript">
+  $('#form1').validate();
+
+
+  $('.clockpicker').clockpicker({
+    placement: 'top',
+    donetext: 'Klaar',
+    default: 'now',
+
+  });
+
+  $('#aantalpersonen').change(function () {
+    if ($('#aantalpersonen').val() == 100) {
+      $('.hidden-few-people').addClass('show');
     } else {
-      query_string[pair[0]].push(decodeURIComponent(pair[1]));
+      $('.hidden-few-people').removeClass('show');
     }
-  } 
-    return query_string;
-}();
-        if (QueryString.bestel == 'mislukt') {
-          $('#misluktmelding').modal('show');
+  });
+
+  function fullsizer() {
+    $('.fullsize').css('min-height', $(window).height() + 'px');
+  }
+
+  $(document).ready(function () {
+    $('#misluktmelding').modal({
+      show: false
+    });
+
+    $('a[href^="#"]').on('click', function (e) {
+      e.preventDefault();
+
+      var target = this.hash;
+      var $target = $(target);
+
+      $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+      }, 900, 'swing', function () {
+        window.location.hash = target;
+      });
+    });
+    $(document).on('scroll', function () {
+
+      if ($(window).scrollTop() > 100) {
+        $('.scroll-top-wrapper-right').addClass('show');
+      } else {
+        $('.scroll-top-wrapper-right').removeClass('show');
+      }
+    });
+    fullsizer();
+
+    var QueryString = function () {
+      // This function is anonymous, is executed immediately and 
+      // the return value is assigned to QueryString!
+      var query_string = {};
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        // If first entry with this name
+        if (typeof query_string[pair[0]] === "undefined") {
+          query_string[pair[0]] = decodeURIComponent(pair[1]);
+          // If second entry with this name
+        } else if (typeof query_string[pair[0]] === "string") {
+          var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+          query_string[pair[0]] = arr;
+          // If third or later entry with this name
+        } else {
+          query_string[pair[0]].push(decodeURIComponent(pair[1]));
         }
-        
-      });
-      $(window).resize(function() {
-        //fullsizer();
-      });
-    </script>
+      }
+      return query_string;
+    }();
+    if (QueryString.bestel == 'mislukt') {
+      $('#misluktmelding').modal('show');
+    }
+
+  });
+  $(window).resize(function () {
+    //fullsizer();
+  });
+</script>
+
 </html>

@@ -1,3 +1,29 @@
+button.btn {
+  min-width: 80px;
+}
+
+.navbar-collapse.in {
+    overflow-y: visible !important;
+}
+
+@media screen and (max-width: 768px) {
+    .motto.paddingtop {
+        padding-top: 150px;
+    }
+}
+
+.wrapper.topbar {
+  padding-top: 70px;
+}
+
+.logo {
+    width: 40vw;
+}
+
+.logowide {
+  width: 80vw;
+}
+
 .broodje{
     background-image: url('../images/sandwichblur.jpg');
 }
@@ -105,4 +131,78 @@ fieldset>.nolinelegend {
   border: 0px;
   margin-bottom: 5px;
   margin-top: 20px;
+}
+
+@media screen and (min-width: 1921px) {
+  #kaasschotels {
+  background-image: url('../images/kaasschotel-3.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+  background-size:cover;
+  background-position:center;
+}
+}
+
+@media screen and (max-width: 1920px) {
+#kaasschotels {
+  background-image: url('../images/kaasschotel-3_1920.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+  background-size:cover;
+  background-position:center;
+}
+}
+
+#bestel {
+  background-image: url('../images/kaasschotel-4.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+  background-size:cover;
+  background-position:center;
+}
+
+#welkom {
+  background-image: url('../images/kaasschotel-2.png');
+  backface-visibility: 100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+  background-size:cover;
+  background-position:center;
+}
+
+#fijnevleeswaren {
+  background-image: url('../images/ham.jpg');
+  backface-visibility: 100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+  background-size:cover;
+  background-position:center;
+}
+
+.navbar.transparent.navbar-inverse {
+   background: rgba(0,0,0,0.4);
+}
+
+.sortablack {
+  background: rgba(0,0,0,0.3);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 20px;
+}
+
+.table-hover-blue > tbody > tr:hover {
+  background-color: #89B1B3;
+}
+
+.table-striped-amber > tbody > tr:nth-of-type(odd) {
+  background-color: #EEB02B;
+}
+  
+.table-hover-amber > tbody > tr:hover {
+  background-color: #F3C666;
 }
